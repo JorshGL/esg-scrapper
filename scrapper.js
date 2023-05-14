@@ -33,7 +33,8 @@ const getEsgScore = async (company) => {
 
 const getProducts = async (searchString) => {
   const browser = await puppeteer.launch({
-    headless: false,
+    headless: true,
+    ignoreDefaultArgs: ['--disable-extensions'],
   });
   const page = await browser.newPage();
   const searchUrl = `https://www.exito.com/${searchString}?_q=${searchString}&map=ft`;

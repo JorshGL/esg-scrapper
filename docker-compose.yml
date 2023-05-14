@@ -1,0 +1,13 @@
+version: '1'
+
+services:
+  scrapper:
+    build: .
+    image: scrapper
+    container_name: scrapper
+    ports:
+      - "3001:3001"
+    cap_add:
+      - SYS_ADMIN
+    cpus: 4
+    mem_limit: 4G
